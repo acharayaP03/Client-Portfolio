@@ -1,0 +1,19 @@
+{
+  "name": "personal",
+  "version": "1.0.0",
+  "description": "personal profile",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "profile",
+    "portfolio",
+    "blogs"
+  ],
+  "author": "Trishten Ac",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
