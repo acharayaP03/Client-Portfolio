@@ -4,6 +4,16 @@ const app = express();
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
+
+/**
+ * @TemplateEnding Ejs
+ * @appSet
+ * @Setting up a template engine, no need to require it, Express will automatically discovere it.
+ * @Views folder: Expects all the views to be on ./views folder
+ */
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
 /**
  * @static files
  * @class
@@ -14,7 +24,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, './static')));
 
 app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, './static/index.html'));
+  response.render('pages/index', { pageTitle: 'Shaf Chowdary'});
 });
 
 app.get('/portfolio-details', (request, response) => {
